@@ -7,6 +7,11 @@ router.post('/adduser', (req, res) => {
     user.createUser(req, res)
 })
 
+//show a user 
+
+router.get('/find', (req, res) => {
+    user.finduser(req, res)
+})
 // show all the users
 
 router.get('/listusers', (req, res) => {
@@ -23,3 +28,5 @@ router.post('/updateuser', (req, res) => {
 router.delete('/deleteuser', (req, res) => {
     user.delete(req, res)
 })
+
+module.exports = router

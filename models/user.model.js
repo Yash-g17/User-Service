@@ -1,9 +1,6 @@
 const mongoose = require('mongoose');
 
 var userSchema = new mongoose.Schema({
-    _id: {
-        type: String
-    },
     firstname: {
         type: String
     },
@@ -11,7 +8,7 @@ var userSchema = new mongoose.Schema({
         type: String
     },
     emailid: {
-        type: Date
+        type: String
     },
     phonenum: {
         type: Number
