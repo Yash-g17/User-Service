@@ -9,9 +9,10 @@ router.post('/adduser', (req, res) => {
 
 //show a user 
 
-router.get('/find', (req, res) => {
+router.post('/find', (req, res) => {
     user.finduser(req, res)
 })
+
 // show all the users
 
 router.get('/listusers', (req, res) => {

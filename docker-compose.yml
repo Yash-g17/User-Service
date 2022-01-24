@@ -5,12 +5,14 @@ services:
     ports:
       - "3002:3002"
     volumes:
-      - ./:/myapp
+      - ./:/myapp3
       - /myapp/node_modules
     environment:
       - PORT=3002
     depends_on:
       - mongo
+    # networks:
+    #   - ui-service-cont_uinetwork
   mongo:
     image: mongo
     # environment:
@@ -20,3 +22,6 @@ services:
       - mongo-db:/data/db3
 volumes:
   mongo-db:
+# networks:
+#   ui-service-cont_uinetwork:
+#     external: true
