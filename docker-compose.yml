@@ -1,18 +1,16 @@
 version: "3"
 services:
-  user-service-cont:
+  user:
     build: .
     ports:
       - "3002:3002"
     volumes:
       - ./:/myapp3
-      - /myapp/node_modules
+      - /myapp3/node_modules
     environment:
       - PORT=3002
     depends_on:
       - mongo
-    # networks:
-    #   - ui-service-cont_uinetwork
   mongo:
     image: mongo
     # environment:
@@ -22,6 +20,7 @@ services:
       - mongo-db:/data/db3
 volumes:
   mongo-db:
-# networks:
-#   ui-service-cont_uinetwork:
-#     external: true
+networks:
+  default:
+    external:
+      name: bridge-network
